@@ -9,6 +9,7 @@ import {
 } from "@components/config/util";
 import { useInvalidate, useRead, useWrite } from "@lib/hooks";
 import { Types } from "@komodo/client";
+import { ComposeEditor } from "@ui/compose-editor.tsx";
 import { createRef, ReactNode, useState } from "react";
 import { CopyGithubWebhook, ServerSelector } from "../common";
 import { useToast } from "@ui/use-toast";
@@ -174,8 +175,8 @@ export const StackConfig = ({
             components: {
               file_contents: (file_contents, set) => {
                 return (
-                  <Textarea
-                    ref={fileContentsRef}
+                  <ComposeEditor
+                    //ref={fileContentsRef}
                     value={file_contents}
                     disabled={disabled}
                     onChange={(e) => set({ file_contents: e.target.value })}

@@ -6,6 +6,7 @@ import { Router } from "@router";
 import { WebsocketProvider } from "@lib/socket";
 import { Toaster } from "@ui/toaster";
 import { atomWithStorage } from "@lib/hooks";
+import './userWorker'
 
 export const AUTH_TOKEN_STORAGE_KEY = "komodo-auth-token";
 
