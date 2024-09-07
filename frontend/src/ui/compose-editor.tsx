@@ -22,7 +22,6 @@ export const ComposeEditor = (props: TextareaProps) => {
     const { className, value = '#Paste compose file contents', ...rest } = props;
     const [editor, setEditor] = useState<monacoEditor.editor.IStandaloneCodeEditor | null>(null);
     const monacoEl = useRef(null);
-monaco.Uri.parse('file:///person.yaml')
     useEffect(() => {
         if (monacoEl) {
             setEditor((editor) => {
@@ -31,7 +30,7 @@ monaco.Uri.parse('file:///person.yaml')
                 const model = monacoEditor.editor.createModel(
                     value as string,
                     undefined,
-                    monaco.Uri.parse('file:///person.yaml')
+                    monaco.Uri.parse('file:///compose.yaml')
                 );
                 return monaco.editor.create(monacoEl.current!, {
                     model,
